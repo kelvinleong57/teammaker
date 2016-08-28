@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template, redirect, url_for, s
 import sys, json, datetime
 import urllib2
 
-from teammaker import app
+from teammaker_flask import app
 
 from file_upload import upload_file
 

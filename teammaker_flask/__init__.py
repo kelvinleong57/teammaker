@@ -8,4 +8,4 @@ from firebase import firebase
 app = Flask(__name__)
 firebase = firebase.FirebaseApplication('https://teammaker-bb56c.firebaseio.com', None)
 
-import teammaker.routes
+import teammaker_flask.routes

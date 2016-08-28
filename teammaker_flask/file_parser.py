@@ -1,6 +1,6 @@
 import csv
 
-from teammaker import firebase
+from teammaker_flask import firebase
 
 def parse_file(file):
 	file_reader = csv.reader(file)
