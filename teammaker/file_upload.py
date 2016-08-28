@@ -1,5 +1,7 @@
 from werkzeug.utils import secure_filename
 
+from file_parser import *
+
 ALLOWED_EXTENSIONS = set(['csv', 'txt'])
 
 def allowed_file(filename):
@@ -17,6 +19,9 @@ def upload_file(request):
 
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
+
+        parse_file(file)
+
         return True
 
     return False

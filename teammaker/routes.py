@@ -2,9 +2,9 @@ from flask import Flask, request, jsonify, render_template, redirect, url_for, s
 import sys, json, datetime
 import urllib2
 
-from teammaker import *
+from teammaker import app
 
-from upload import upload_file
+from file_upload import upload_file
 
 # *********************** ROUTES ***********************
 
@@ -12,14 +12,14 @@ from upload import upload_file
 def index():
 	# result = firebase.get('/requests', None)
 	# print result
-	return 'index'
+	return render_template('index.html')
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         success = upload_file(request)
-        if (success)
+        if success:
         	return 'success upload'
-        else
+        else:
         	return 'invalid'
     return render_template('upload.html')
