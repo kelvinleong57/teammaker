@@ -3,9 +3,12 @@ import sys, json, datetime
 import urllib2
 
 from teammaker import app
+from teammaker import firebase
 
 # *********************** ROUTES ***********************
 
 @app.route('/')
 def index():
+	result = firebase.get('/requests', None)
+	print result
 	return 'index'
